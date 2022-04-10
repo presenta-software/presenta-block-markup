@@ -44,12 +44,12 @@ const block = function (el, config) {
   child.classList.add(css.markup, prefix)
 
   const bindObject = {}
-  const stopKeys = ['type', 'html', 'css', 'fields', 'modules']
-  for (const k in config) {
-    if (stopKeys.indexOf(k) === -1) {
-      bindObject[k] = config[k]
-    }
-  }
+  // const stopKeys = ['type', 'html', 'css', 'fields', 'modules', 'fonts', 'contextType']
+  // for (const k in config) {
+  //   if (stopKeys.indexOf(k) === -1 && k.substr(0, 1) !== '_') {
+  //     bindObject[k] = config[k]
+  //   }
+  // }
 
   const confQuery = config._sceneConfig._query
   if (confQuery) {
