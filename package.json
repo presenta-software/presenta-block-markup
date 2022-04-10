@@ -1,0 +1,38 @@
+{
+  "name": "@presenta/block-markup",
+  "version": "1.0.0",
+  "description": "",
+  "unpkg": "dist/presenta-block-markup.min.js",
+  "module": "dist/presenta-block-markup.min.js",
+  "scripts": {
+    "start": "rollup -c --watch",
+    "bump": "npm run build && git add -u && git commit -m \"bump release\" && npm version patch && git push && npm publish",
+    "test": "browser-sync start -s -f \"dist/*, test/*\" --startPath test",
+    "build": "rollup -c"
+  },
+  "files": [
+    "dist/"
+  ],
+  "author": "",
+  "license": "BSD-3-Clause",
+  "devDependencies": {
+    "@babel/core": "^7.17.8",
+    "@babel/preset-env": "^7.16.11",
+    "@rollup/plugin-babel": "^5.3.1",
+    "@rollup/plugin-commonjs": "^21.0.3",
+    "@rollup/plugin-node-resolve": "^13.1.3",
+    "autoprefixer": "^10.4.4",
+    "cssnano": "^5.1.5",
+    "node-sass": "^7.0.1",
+    "rollup": "^2.70.1",
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-terser": "^7.0.2",
+    "standard": "^16.0.4"
+  },
+  "dependencies": {
+    "alpinejs": "^3.9.5",
+    "scope-css": "^1.2.1",
+    "short-unique-id": "^4.4.4",
+    "xss": "^1.0.11"
+  }
+}

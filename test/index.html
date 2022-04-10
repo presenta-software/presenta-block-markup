@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PresentaBlockMarkup</title>
+    <script src="../dist/presenta-block-markup.min.js"></script>
+
+    <style>
+        .wrap{
+            width: 600px;
+            height: 350px;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wrap" id="wrapper1"></div>
+
+    <div class="wrap" id="wrapper2"></div>
+
+    <script>
+        var block = {
+            type: 'markup',
+
+            text: 'HELLO oooo',
+            other: 'Ciao <b>Bene</b>',
+            bla: 10,
+            
+            fields: [
+                {key: 'text'},
+                {key: 'other'},
+                {key: 'bla'},
+            ],
+            html: `<div><h1>tit</h1>
+    <span x-text="text"></span>                
+    <span x-html="other" x-show="wella"></span>                
+    <span x-html="bla"></span>                
+</div>`,
+            css: `{
+                background: yellow;
+            }h1{
+                color:green;
+            }
+            p > b{
+             color:blue;   
+            }`
+        }
+        new PresentaBlockMarkup(document.querySelector('#wrapper1'), block)
+
+        
+    </script>
+
+
+<script>
+    var block = {
+        type: 'alpine',
+
+        text: 'HELLO from config 2',
+        items: ['a', 'b', 'c', 'd'],
+        size: 10,
+
+        html: `<div>
+<h1 x-text="text"></h1>
+<template x-for="item in items" :key="item">
+    <div x-text="item"></div>
+</template>
+
+<svg viewBox="0 0 200 200">
+    <template x-for="(item,index) in items" :key="index">
+        <circle :cx="index * 50" cy="100" :r="size * (index+1)" :fill="'blue'"></circle>
+    </template>
+</svg>
+</div>`,
+css: `h1{color:red;}`
+    }
+    new PresentaBlockMarkup(document.querySelector('#wrapper2'), block)
+</script>
+</body>
+</html>
