@@ -1,6 +1,6 @@
 {
   "name": "@presenta/block-markup",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "unpkg": "dist/presenta-block-markup.min.js",
   "module": "dist/presenta-block-markup.min.js",
