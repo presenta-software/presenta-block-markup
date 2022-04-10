@@ -3,6 +3,7 @@
     height: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    align-items: var(--markupHorizontal);
+    justify-content: var(--markupVertical);
+    text-align: var(--markupTextAlign);
 }

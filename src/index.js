@@ -42,6 +42,9 @@ const block = function (el, config) {
 
   const child = document.createElement('div')
   child.classList.add(css.markup, prefix)
+  child.style.setProperty('--markupTextAlign', config.align)
+  child.style.setProperty('--markupHorizontal', config.horizontal)
+  child.style.setProperty('--markupVertical', config.vertical)
 
   const bindObject = {}
   // const stopKeys = ['type', 'html', 'css', 'fields', 'modules', 'fonts', 'contextType']
