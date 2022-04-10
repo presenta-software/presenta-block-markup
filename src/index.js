@@ -70,7 +70,6 @@ const block = function (el, config) {
 
   // inject google fonts using Presenta utils
   // kind of hack
-  console.log('window.Presenta', window.Presenta)
   if (typeof window !== 'undefined' && window.Presenta && config.fonts) {
     config.fonts.forEach(f => {
       window.Presenta.utils.addFontDep(f)
